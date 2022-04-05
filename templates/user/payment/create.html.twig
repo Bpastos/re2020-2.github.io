@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        <h1 class="h3 mb-3 font-weight-normal mt-5 pt-5">Inscription</h1>
+        {{ form_start(form) }}
+        <label for="">Votre Nom</label>
+        {{ form_row(form.lastName) }}
+        <label for="">Votre Prénom</label>
+        {{ form_row(form.firstName) }}
+
+        <label for="">Votre Adres</label>
+        {{ form_row(form.address) }}
+        <label for="">Votre city</label>
+        {{ form_row(form.city) }}
+        <label for="">Votre postalcode</label>
+        {{ form_row(form.postalCode) }}
+        <label for="">Votre téléphone</label>
+        {{ form_row(form.phoneNumber) }}
+
+
+        {{ form_widget(form.submit, {'label': 'Crée sont compte'}) }}
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}

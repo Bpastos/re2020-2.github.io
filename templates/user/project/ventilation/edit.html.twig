@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="h3 mb-3 font-weight-normal mt-5 pt-5">Ventilation</h1>
+        {{ form_start(form) }}
+        <label for="">systems : </label>
+        {{ form_row(form.systems) }}
+        <label for="">information : </label>
+        {{ form_row(form.information) }}
+        {{ form_widget(form.submit, {'label': 'Crée le Ventilation'}) }}
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}

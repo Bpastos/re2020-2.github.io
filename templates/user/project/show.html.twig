@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <section class="mt-5">
+        <div class="container">
+            <div class="col-lg-4">Building
+                {% if project.building %}
+                    <a href="{{ path('building_edit', {'idProject': project.id}) }}" class="btn btn-info">Modifier les building</a>
+                {% else %}
+                    <a href="{{ path('building_create', {'idProject': project.id}) }}" class="btn btn-info">Ajouter les building</a>
+                {% endif %}
+            </div>
+            <div class="col-lg-4">Carpentry
+                {% if project.carpentry %}
+                    <a href="{{ path('carpentry_edit', {'idProject': project.id}) }}" class="btn btn-info">Modifier la partie Bati</a>
+                {% else %}
+                    <a href="{{ path('carpentry_create', {'idProject': project.id}) }}" class="btn btn-info">Saisir les Carpentry</a>
+                {% endif %}
+
+            </div>
+            <div class="col-lg-4">Chauffage Principal
+                {% if project.mainHeading %}
+                    <a href="{{ path('mainHeading_edit', {'idProject': project.id}) }}" class="btn btn-info">Modifier la partie Chauffage Principal</a>
+                {% else %}
+                    <a href="{{ path('mainHeading_create', {'idProject': project.id}) }}" class="btn btn-info">Ajouter les informations Chauffage Principal</a>
+                {% endif %}
+            </div>
+            <div class="col-lg-4">Chauffage Secondaire
+                {% if project.secondaryHeading %}
+                    <a href="{{ path('secondaryHeading_edit', {'idProject': project.id}) }}" class="btn btn-info">Modifier la Chauffage Secondaire</a>
+                {% else %}
+                    <a href="{{ path('secondaryHeading_create', {'idProject': project.id}) }}" class="btn btn-info">crée une Chauffage Secondaire</a>
+                {% endif %}
+            </div>
+            <div class="col-lg-4">Eau Sanitaire
+                {% if project.sanitaryHotwater %}
+                    <a href="{{ path('sanitaryHotwater_edit', {'idProject': project.id}) }}" class="btn btn-info">Modifier la Eau Sanitaire</a>
+                {% else %}
+                    <a href="{{ path('sanitaryHotwater_create', {'idProject': project.id}) }}" class="btn btn-info">crée une Eau Sanitaire</a>
+                {% endif %}
+            </div>
+
+            <div class="col-lg-4">Ventilation
+                {% if project.ventilation %}
+                    <a href="{{ path('ventilation_edit', {'idProject': project.id}) }}" class="btn btn-info">Modifier la ventilation</a>
+                {% else %}
+                    <a href="{{ path('ventilation_create', {'idProject': project.id}) }}" class="btn btn-info">crée une ventilation</a>
+                {% endif %}
+            </div>
+            <div class="col-lg-4">Information
+                {% if project.comment %}
+                    <a href="{{ path('comment_edit', {'idProject': project.id}) }}" class="btn btn-info">Modifier la comment</a>
+                {% else %}
+                    <a href="{{ path('comment_create', {'idProject': project.id}) }}" class="btn btn-info">crée une comment</a>
+                {% endif %}
+
+                {% if project.building and project.carpentry and project.mainHeading and project.secondaryHeading and project.sanitaryHotwater and project.ventilation and project.comment and not project.billing %}
+                    <a href="{{ path('offer_show', {'idProject': project.id}) }}" class="btn btn-success">Chosiir un forfais</a>
+                {% else %}
+                    <h3>Vous devez compléter toute les informations afin de procéder au paiyement</h3>
+                {% endif %}
+
+                {% if project.remarks %}
+                    <a href="{{ path('remark_show_all', {'idProject': project.id}) }}" class="btn btn-info">Voir les remarques</a>
+                {% endif %}
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}

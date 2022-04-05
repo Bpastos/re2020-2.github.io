@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <div class="table-responsive">
+        <div class="container">
+            <h4>{{ remark.title }}</h4>
+            <p>{{ remark.content }}</p>
+        </div>
+        <a href="{{ path('remark_accept', {'idProject': remark.project.id, 'idRemark': remark.id}) }}" class="btn btn-success">Accepter la remarque</a>
+    </div>
+
+
+{% endblock %}

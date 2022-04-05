@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="h3 mb-3 font-weight-normal mt-5 pt-5">Building</h1>
+        {{ form_start(form) }}
+        <label for="">Surface plancher (m²)</label>
+        {{ form_row(form.floorArea) }}
+        <label for="">Surface habitable (m²)</label>
+        {{ form_row(form.livingArea) }}
+        <label for="">Surface plancher existant</label>
+        {{ form_row(form.existingFloorArea) }}
+        <label for="">Plancher bas</label>
+        {{ form_row(form.lowFloor) }}
+        <label for="">Traitement des ponts thermiques :</label>
+        {{ form_row(form.lowFloorThermal) }}
+        <label for=""> Plancher haut</label>
+        {{ form_row(form.highFloor) }}
+        <label for="">Traitement des ponts thermiques :</label>
+        {{ form_row(form.highFloorThermal) }}
+        <label for="">Plancher intermédiaire</label>
+        {{ form_row(form.intermediateFloor) }}
+        <label for="">Traitement des ponts thermiques :</label>
+        {{ form_row(form.intermediateFloorThermal) }}
+        <label for="">Façades</label>
+        {{ form_row(form.facades) }}
+        <label for=""> Parois particulières</label>
+        {{ form_row(form.particularWalls) }}
+        <label for="">Les plans</label>
+        {{ form_row(form.plan) }}
+        {% if plans %}
+            <table class="table ">
+                <thead>
+                <tr>
+                    <th scope="col">Nom du plan chiffré</th>
+                    <th scope="col">Voir</th>
+                    <th scope="col">Supprimer</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for plan in plans %}
+                    <tr>
+                        <th scope="row">{{ plan.name }}</th>
+                        <td><a class="btn btn-info" href="/uploads/pdf/{{ plan.name }}" target="_blank">{{ plan.name }}</a></td>
+                        <td><a class="btn btn-danger" href="{{ path('building_planDelete', {'namePlan': plan.name}) }}">Supprimer</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+
+            </table>
+
+        {% endif %}
+
+        {{ form_widget(form.submit, {'label': 'Crée le building'}) }}
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}
+

@@ -1,0 +1,259 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+  <div class="container-fluid">
+    <div class="row">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item carouselBg active" style="background-image:url({{ asset('/images/bgslider.png') }});">
+                <div class="row h-100">
+                    <div class="col-xxl-6 col-xl-5 d-xl-block d-none"></div>
+                    <div class="col-xxl-6 col-xl-7 blurSlider">
+                        <h2 class="sliderTitle">étude re2020 permis</h2>
+                        <div class="sliderPrice">189 € TTC</div>
+                        <p>
+                        votre étude thermique re2020 th-bd avec attestation permis de construire, rapidement et simplement.
+                        </p>
+                        <button class="btnSlider1">En savoir +</button><button class="btnSlider2">Commander</button>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item carouselBg" style="background-image:url({{ asset('/images/bgslider.png') }});">
+                <div class="row h-100">
+                    <div class="col-xxl-6 col-xl-5 d-xl-block d-none"></div>
+                    <div class="col-xxl-6 col-xl-7 blurSlider">
+                        <h2 class="sliderTitle">étude re2020 permis</h2>
+                        <div class="sliderPrice">189 € TTC</div>
+                        <p>
+                        votre étude thermique re2020 th-bd avec attestation permis de construire, rapidement et simplement.
+                        </p>
+                        <button class="btnSlider1">En savoir +</button><button class="btnSlider2">Commander</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-12 col-lg-10">
+                <div class="row g-5 nousChoisir">
+                    <div class="col-12 col-lg-6 col-md-4 m-0">
+                        <img src="{{ asset('images/pancart.jpg') }}" class="img-fluid nouschoisirImg" />
+                    </div>
+                    <div class="col-12 col-lg-6 col-md-8 my-2 my-md-3 px-5 px-md-0">
+                        <h3>POURQUOI NOUS CHOISIR ?</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacus nisi, semper non elit quis, feugiat laoreet urna. Sed blandit velit a elit hendrerit, at dapibus metus ultrices. Donec eget turpis fermentum, porta diam id,</p>
+                        <div class="row">
+                            <div class="col-md-6 nousChoisirList mb-4 mb-md-0">
+                                <i class="fa fa-solid fa-check colorIcon"></i> Délai de réalisation : 24 heures<br />
+                                <i class="fa fa-solid fa-check colorIcon"></i> Assurance décennale<br />
+                                <i class="fa fa-solid fa-check colorIcon"></i> Qualification RGE ingénierie qualifiée par l’OPQIBI (1331 et 1332)<br />
+                                <i class="fa fa-solid fa-check colorIcon"></i> POURQUOI NOUS CHOISIR ?<br />
+                            </div>
+                            <div class="col-md-6">
+                            <div><button class="btnNousChoisir1">En savoir +</button></div>
+                            <div class="dividBtnBleu"></div>
+                            <div><button class="btnNousChoisir2">Commander</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-3 mt-md-5 pt-5 process mb-lg-5 mb-md-0">
+    <div class="container mb-0 mb-md-5 mb-lg-0 pb-4 pb-md-0">
+        <div class="row justify-content-center">
+            <div class="col-sm-12">
+                <h3 class="centredTitle">UN PROCESSUS DE RÉALISATION NOVATEUR</h3>
+                <p>
+                    Les besoins de nos clients sont différents suivant l'avancement de leur projet, de leurs connaissances techniques, etc. Pour ceux qui sont uniquement intéressés par une étude RE2020, nous proposons les forfaits de base RE2020 à des tarifs compétitifs. Pour ceux qui ont des besoins supplémentaires, nous proposons plusieurs options facultatives. Le client paye donc uniquement les prestations dont il a besoin.
+                </p>
+            </div>
+            <div class="row justify-content-center g-3 mt-3 align-top processRow">
+                <a class="col-lg-2 col-md-4 mb-4 mb-md-5 mb-lg-0 m-md-0" href="#">
+                    <div class="processStep text-center p-3">
+                        <div class="theStep">
+                            <i class="fa fa-right-to-bracket"></i>
+                            <h5>Connexion</h5>
+                            <p>Une fois inscrit, vous pouvez vous connecter à notre espace client, personnalisé à votre projet</p>
+                        </div>
+                        <div class="pn"><div class="processNumber">1</div></div>
+                    </div>
+                </a>
+                <a class="col-lg-2 col-md-4 mb-4 mb-md-5 mb-lg-0 m-md-0" href="#">
+                    <div class="processStep text-center p-3">
+                        <div class="theStep">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            <h5>Commande</h5>
+                            <p>Une fois inscrit, vous pouvez vous connecter à notre espace client, personnalisé à votre projet</p>
+                        </div>
+                        <div class="pn"><div class="processNumber">2</div></div>
+                    </div>
+                </a>
+                <a class="col-lg-2 col-md-4 mb-4 mb-md-5 mb-lg-0 m-md-0" href="#">
+                    <div class="processStep text-center p-3">
+                        <div class="theStep">
+                            <i class="fa-solid fa-keyboard"></i>
+                            <h5>Saisie</h5>
+                            <p>Une fois inscrit, vous pouvez vous connecter à notre espace client, personnalisé à votre projet</p>
+                        </div>
+                        <div class="pn"><div class="processNumber">3</div></div>
+                    </div>
+                </a>
+                <a class="col-lg-2 col-md-4 mb-4 mb-md-5 mb-lg-0 m-md-0" href="#">
+                    <div class="processStep text-center p-3">
+                        <div class="theStep">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <h5>étude</h5>
+                            <p>Une fois inscrit, vous pouvez vous connecter à notre espace client, personnalisé à votre projet</p>
+                        </div>
+                        <div class="pn"><div class="processNumber">4</div></div>
+                    </div>
+                </a>
+                <a class="col-lg-2 col-md-4 mb-4 mb-md-5 mb-lg-0 m-md-0" href="#">
+                    <div class="processStep text-center p-3">
+                        <div class="theStep">
+                            <i class="fa-solid fa-file-lines"></i>
+                            <h5>Attestations RE2020</h5>
+                            <p>Une fois inscrit, vous pouvez vous connecter à notre espace client, personnalisé à votre projet</p>
+                        </div>
+                        <div class="pn"><div class="processNumber">5</div></div>
+                    </div>
+                </a>
+                <div class="col-md-10 mb-4 mb-md-5 m-md-0 mb-lg-0 d-lg-block d-none">
+                    <div class="dividerProcess"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid tarifsContainer">
+    <div class="container">
+        <div class="row align-items-end tarifsRow g-1">
+        <div class="col-md-12">
+            <h3 class="centredTitle">TARIFS ÉTUDE RE2020 ET ATTESTATION<br /> PERMIS DE CONSTRUIRE</h3>
+        </div>
+            <div class="col-md-4">
+                <div class="pack pack1 text-center">
+                    <p class="surTitrePack">RE2020 PERMIS</p>
+                    <div class="packPrice">189 € TTC</div>
+                    <p>VALIDER LE PERMIS DE CONSTRUIRE</p>
+                    <div class="packDivider"></div>
+                    <p class="packDescription">Attestation RE2020 permis Joignable au téléphone</p>
+                    <button class="buyPack"><i class="fa-solid fa-cart-shopping"></i> Commander</button>
+                    <p></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="pack pack2 text-center">
+                    <p class="surTitrePack">RE2020 COMPLÈTE</p>
+                    <div class="packPrice">269 € TTC</div>
+                    <p>VALIDER LE PROJET COMPLET</p>
+                    <div class="packDivider"></div>
+                    <p class="packDescription">Attestation RE2020 permis Documents pour fin de travaux Joignable au téléphone</p>
+                    <button class="buyPack"><i class="fa-solid fa-cart-shopping"></i> Commander</button>
+                    <p></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="pack pack3 text-center">
+                    <p class="surTitrePack">RE2020 SÉRÉNITÉ</p>
+                    <div class="packPrice">399 € TTC</div>
+                    <p>OPTIMISER LE PROJET</p>
+                    <div class="packDivider"></div>
+                    <p class="packDescription">Attestation RE2020 permis Documents pour fin de travaux Conseils et optimisation Joignable au téléphone</p>
+                    <button class="buyPack"><i class="fa-solid fa-cart-shopping"></i> Commander</button>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ include('@layout/_renseignement.twig') }}
+
+<!-- Blog -->
+<div class="container p-4 blog">
+    <div class="row">
+        <div class="col-md-12"><h3 class="centredTitle">Actualités</h3></div>
+        <a href="#" class="col-md-4">
+            <img src="{{ asset('images/photo-1613132061374-700e1ddd0c86.png') }}" class="mb-3"/>
+            <h4>Lorem ipsum dolor</h4>
+            <p class="date"><i class="far fa-calendar"></i> 2 janvier 2022</p>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacus nisi, semper non elit quis, feugiat laoreet urna. Sed blandit velit a elit hendrerit, at dapibus metus ultrices. Donec eget turpis...</p>
+            <p class="more">Lire la suite <i class="fa fa-angle-right"></i></p>
+        </a>
+        <a href="#" class="col-md-4">
+            <img src="{{ asset('images/jcs-chen-sGblr5yVXiM-unsplash.png') }}" class="mb-3"/>
+            <h4>Lorem ipsum dolor</h4>
+            <p class="date"><i class="far fa-calendar"></i> 2 janvier 2022</p>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacus nisi, semper non elit quis, feugiat laoreet urna. Sed blandit velit a elit hendrerit, at dapibus metus ultrices. Donec eget turpis...</p>
+            <p class="more">Lire la suite <i class="fa fa-angle-right"></i></p>
+        </a>
+        <a href="#" class="col-md-4">
+            <img src="{{ asset('/images/john-fornander-Id7u0EkTjBE-unsplash.png') }}" class="mb-3"/>
+            <h4>Lorem ipsum dolor</h4>
+            <p class="date"><i class="far fa-calendar"></i> 2 janvier 2022</p>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacus nisi, semper non elit quis, feugiat laoreet urna. Sed blandit velit a elit hendrerit, at dapibus metus ultrices. Donec eget turpis...</p>
+            <p class="more">Lire la suite <i class="fa fa-angle-right"></i></p>
+        </a>
+    </div>
+</div>
+<!--End  Blog -->
+<!-- Bloc informations -->
+<div class="container-fluid informations">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 p-3 p-md-0 p-lg-5 py-md-3">
+                <h3>Besoin de plus d'information ?</h3>
+                <p class="pt-2"><i class="fa-solid fa-angle-right"></i> FORMULAIRE DE CONTACT</p>
+                <p><i class="fa-solid fa-angle-right"></i> Nos tarifs</p>
+                <p><i class="fa-solid fa-angle-right"></i> Apropos du RE2020</p>
+                <p><i class="fa-solid fa-angle-right"></i> FAQ</p>
+            </div>
+            <div class="col-md-6 rappel p-3 p-md-0 p-lg-5 py-md-3 ">
+                <h3>être rappeler</h3>
+                <form class="pt-2">
+                    <div class="row mb-4">
+                        <div class="col">
+                          <div class="form-outline">
+                            <input type="text" id="form3Example1" class="form-control" placeholder="Nom..."/>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-outline">
+                            <input type="text" id="form3Example2" class="form-control" placeholder="Prénom..."/>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Adresse E-mail...">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="tel"  class="form-control" id="phone" name="phone" placeholder="Numéro de télépone..." pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                            </div>
+                        </div>
+                    </div>
+                    <bouton type="submit" class="submitBtn p-2"><i class="fa fa-paper-plane"></i> Envoyer</bouton>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Bloc informations -->
+
+{% endblock %}

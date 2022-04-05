@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <div class="table-responsive">
+        <table class="table ">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Titre de la remarque</th>
+                <th scope="col">Action</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for remark in remarks %}
+            <tr>
+                <th scope="row">1</th>
+                <td>{{ remark.title }}</td>
+                <td><a href="{{ path('remark_show', {'idProject': remark.project.id, 'idRemark': remark.id}) }}" class="btn btn-info">Voir la remarque</a></td>
+
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}

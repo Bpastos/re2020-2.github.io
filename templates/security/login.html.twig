@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block title %}Connexion{% endblock %}
+{% block body %}
+<div class="container-fluid connexionBg">
+    <div class="container">
+        <div class="row justify-content-center occupeHauteur align-items-center">
+            <div class="col-md-5">
+                <form method="post" class="mt-5 py-4 container bgFormConnexion shadow text-center" name="login">
+                    {% if error %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+                    {% if app.user %}
+                        <div class="mb-3">
+                            You are logged in as {{ app.user.username }}, <a href="{{ path('security_logout') }}">Logout</a>
+                        </div>
+                    {% endif %}
+                    <img src="{{ asset('images/Logo@2x.png') }}" alt="logo" title="RE2020" class="mb-5">
+                    <h1 class="h3 mb-3 font-weight-normal titleCentredDivid">Se connecter</h1>
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control mb-4" placeholder="Votre Email" required autofocus>
+                    <input type="password" name="password" id="inputPassword" class="form-control mb-4" placeholder="Votre mot de passe" required>
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                    <button class="btn btn-lg my-3 btnConnexion" type="submit">Se connecter</button>
+                    <a href="{{ path('security_register') }}" class="formLink">Vous n'avez pas de compte ? Enregistrez-vous</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

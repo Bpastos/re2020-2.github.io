@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form_start(ownerForm) }}
+    <section class="row container">
+        <div class="col-md-6">
+            <label for="">Prénom propio</label>
+            {{ form_row(ownerForm.firstName) }}
+            <label for="">Nom famille propio</label>
+            {{ form_row(ownerForm.lastName) }}
+            <label for="">Adresse</label>
+            {{ form_row(ownerForm.address) }}
+            <label for="">postalCode </label>
+            {{ form_row(ownerForm.postalCode) }}
+            <label for="">city </label>
+            {{ form_row(ownerForm.city) }}
+            <div></div>
+        </div>
+        <div class="col-md-6">
+            {{ form_start(projectForm) }}
+            <label for="">Nommez le projets</label>
+            {{ form_row(projectForm.projectName) }}
+            <label for="">Votre Prénom</label>
+            {{ form_row(projectForm.firstName) }}
+            <label for="">Votre Nom Famille</label>
+            {{ form_row(projectForm.lastName) }}
+            <label for="">Socièter</label>
+            {{ form_row(projectForm.company) }}
+            <label for="">Adresse</label>
+            {{ form_row(projectForm.address) }}
+            <label for="">Code Postale</label>
+            {{ form_row(projectForm.postalCode) }}
+            <label for="">Ville</label>
+            {{ form_row(projectForm.city) }}
+            <label for="">Numéro de téléphone</label>
+            {{ form_row(projectForm.phoneNumber) }}
+            <label for="">Email</label>
+            {{ form_row(projectForm.email) }}
+            <label for="">Master Job</label>
+            {{ form_row(projectForm.masterJob) }}
+            <label for="">cadastralReference</label>
+            {{ form_row(projectForm.cadastralReference) }}
+            <label for="">projectLocation</label>
+            {{ form_row(projectForm.projectLocation) }}
+            <label for="">projectType</label>
+            {{ form_row(projectForm.projectType) }}
+            <label for="">constructionPlanDate</label>
+            {{ form_row(projectForm.constructionPlanDate) }}
+            {{ form_widget(projectForm.submit, {'label': 'Crée le project'}) }}
+            {{ form_end(projectForm) }}
+            {{ form_end(ownerForm) }}
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}ET2020{% endblock %}</title>
+    <script src="https://kit.fontawesome.com/d684afa6cf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+{% include 'layout/_navbar.html.twig' %}
+
+
+<div class="">
+    {% for rubrique, messages in app.flashes %}
+        <div class="alert alert-{{ rubrique }} text-center">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    {% block body %}{% endblock %}
+
+{% include 'layout/_footer.html.twig' %}
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+<script src="{{ asset('js/custom.js') }}"></script>
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="02c61fcc-e1ad-4860-b251-2818130221c9";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+</body>
+</html>

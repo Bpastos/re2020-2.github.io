@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="h3 mb-3 font-weight-normal mt-5 pt-5">SecondaryHeading</h1>
+        {{ form_start(form) }}
+        <label for="">Emplacement : </label>
+        {{ form_row(form.location) }}
+        <label for="">Emetteur de chauffage : :. </label>
+        {{ form_row(form.heatingAppliance) }}
+        <label for="">information : </label>
+        {{ form_row(form.information) }}
+        {{ form_widget(form.submit, {'label': 'Edit le SecondaryHeading'}) }}
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}

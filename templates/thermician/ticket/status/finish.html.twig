@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container mt-5">
+        {% if project %}
+            <div class="row">
+                <div>
+                    <h3>Propriétaire du projet</h3>
+                    <label for="">Prénom: {{ project.ownerProject.firstName }}</label>
+                    <label for="">Nom de Famille: {{ project.ownerProject.lastName }}</label>
+                    <label for="">Ville(habite actuellement): {{ project.ownerProject.city }}</label>
+                    <label for="">code postale (same): {{ project.ownerProject.postalCode }}</label>
+                    <label for="">adresse (same): {{ project.ownerProject.address }}</label>
+                </div>
+
+                <h3>Partie Utilisateur</h3>
+                <label for="">Prénom: {{ project.firstName }}</label>
+                <label for="">Nom: {{ project.lastName }}</label>
+                <label for="">Entreprise: {{ project.company }}</label>
+                <label for="">Téléphone: {{ project.phoneNumber }}</label>
+                <label for="">Email: {{ project.email }}</label>
+                <label for="">{{ project.masterJob }}</label>
+                {#                <h3>Donnée Projet & Localisation</h3>#}
+                {#                <label for="">Adresse: {{ project.address }}</label>#}
+                {#                <label for="">Code Postale:{{ project.postalCode }}</label>#}
+                {#                <label for="">Ville: {{ project.city }}</label>#}
+                {#                <label for="">Ref Cadastra: {{ project.cadastralReference }}</label>#}
+                {#                <h3>Partie Projet</h3>#}
+                {#                <label for="">Projet location type: {{ project.projectLocation }}</label>#}
+                {#                <label for="">Project type: {{ project.projectType }}</label>#}
+                {#                <label for="">Project Name:{{ project.projectName }}</label>#}
+                {#                <label for="">Project status: {{ project.status }}</label>#}
+                {#                <label for="">Date de construction du projet: {{ project.constructionPlanDate|date('d/m/Y') }}</label>#}
+                {#                <label for="">Date de création dans l'espace client: {{ project.createdAt|date('d/m/Y') }}</label>#}
+                {#                <h3>Partie Building</h3>#}
+                {#                <label for="">Surface plancher (m²): {{ project.building.floorArea }}</label>#}
+                {#                <label for="">Surface habitable (m²): {{ project.building.livingArea }}</label>#}
+                {#                <label for="">Surface plancher existant: {{ project.building.existingFloorArea }}</label>#}
+                {#                <label for="">Plancher bas :{{ project.building.lowFloor }}</label>#}
+                {#                <label for="">Plancher bas Traitement des ponts thermiques: {{ project.building.lowFloorThermal }}</label>#}
+                {#                <label for="">Plancher haut: {{ project.building.highFloor }}</label>#}
+                {#                <label for="">Plancher haut Traitement des ponts thermiques : {{ project.building.highFloorThermal }}</label>#}
+                {#                <label for="">Plancher intermédiaire : {{ project.building.intermediateFloor }}</label>#}
+                {#                <label for="">Plancher intermédiaire Traitement des ponts thermiques : {{ project.building.intermediateFloorThermal }}</label>#}
+                {#                <label for="">Façades: {{ project.building.facades }}</label>#}
+                {#                <label for="">Parois particulières :{{ project.building.particularWalls }}</label>#}
+                {#                <label for="">crée le :{{ project.building.createdAt|date('d/m/y') }}</label>#}
+{#                                {% if project.building.plan %}#}
+{#                                    {% for plan in project.building.plan %}#}
+{#                                        <a class="btn btn-info" href="/uploads/pdf/{{ plan.name }}" target="_blank">{{ plan.name }}</a>#}
+{#                                    {% endfor %}#}
+{#                                {% else %}#}
+{#                                    <h4>Pas de plan</h4>#}
+{#                                {% endif %}#}
+
+                {% if project.ticket.documents %}
+                    {% for document in project.ticket.documents %}
+                        <a class="btn btn-info" href="/uploads/document/{{ document.certificate }}" target="_blank">{{ document.name }}</a>
+                    {% endfor %}
+                {% else %}
+                    <h4>Pas de document thermician impossible de valider le projet</h4>
+                {% endif %}
+                {% if project.ticket.documents %}
+                    <a href="{{ path('thermician_finish_ticket', {'idProject': project.id}) }}" class="btn btn-success">Finir le projet</a>
+
+                {% endif %}
+
+
+
+            </div>
+        {% endif %}
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+{% block title %}Contact{% endblock %}
+{% block body %}
+
+<div class="container-fluid bgPage p-5">
+       <div class="row">
+           <div class="col-md-12">
+           </div>
+       </div>
+</div>
+<div class="container-fluid bodyPage p-md-5">
+    <div class="container blocContact p-md-4">
+        <div class="row">
+            <div class="col-md-6 pt-4 pt-md-0">
+                <h3>Nos coordonnées</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac viverra risus. Pellentesque habitant morbi tristique senectus </p>
+                <div class="blocInfo pt-3"><i class="fas fa-map-marker-alt"></i> 22 rue Exemple, 82000 Paris</div>
+                <div class="blocInfo pt-4"><i class="fas fa-envelope"></i> contact@re2020.fr</div>
+                <div class="blocInfo pt-4"><i class="fas fa-phone-alt"></i> 06 00 00 00 00</div>
+                <div class="blocInfo pt-4"><i class="fa fa-fax"></i> 05 00 00 00 00</div>
+        </div>
+            <div class="col-md-6 pt-4 pt-md-0">
+            <h3>Contact</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac viverra risus. Pellentesque habitant morbi tristique senectus </p>
+                <form class="pt-3">
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Nom" aria-label="Nom">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Prénom" aria-label="Prénom">
+                    </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="sujet" class="form-control" id="inputEmail4" placeholder="Sujet">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                    <div class="col">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Message"></textarea>
+                        <button type="submit" class="btn btn-primary contactBtn">Envoyer</button>
+                    </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2696.7057403978715!2d6.837829116361682!3d47.476163404971494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4792114a4a4c6b5d%3A0xa71ed4c0b5d31a98!2sMAISON%20ETECH!5e0!3m2!1sen!2sma!4v1645042374759!5m2!1sen!2sma" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+{% endblock %}

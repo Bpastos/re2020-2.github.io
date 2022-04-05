@@ -1,0 +1,98 @@
+{% extends 'thermician/base.html.twig' %}
+
+{% block body %}
+    <div class="container bg-blanc p-4 rounded">
+        <h5 class="alert alert-primary alert-dismissible fade show" role="alert">
+            Bienvenue au tableau de board des <strong>Thermiciens</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </h5>
+        {% if tickets %}
+            <h3 class="mb-3">Tickets disponnibles</h3>
+            <table class="table table-hover table-bordered">
+                <thead class="table-dark">
+                <tr>
+                    <th scope="col" class="py-3">Nom du Projets</th>
+                    <th scope="col" class="py-3">Status</th>
+                    <th scope="col" class="py-3">IsThermician</th>
+                    <th scope="col" class="py-3">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for ticket in tickets %}
+                    <tr>
+                        <th scope="row">{{ ticket.project.projectName }}</th>
+                        <td>{{ ticket.project.status }}</td>
+                        <th scope="col">
+                            {% if ticket.activeThermician %}
+                                Projets pris
+
+                            {% else %}
+                                Projet dispo
+                            {% endif %}
+                        </th>
+                        <td><a href="{{ path('thermician_show_ticket', {'idProject': ticket.project.id}) }}" class="btn btn-projet">Voir le projets</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+        {% if activeTicket %}
+            <h3 class="mb-3"><i class="fa-solid fa-ticket-simple"></i> Mes tickets</h3>
+            <table class="table table-hover table-bordered ">
+                <thead class="table-dark">
+                <tr>
+                    <th scope="col">Nom du Projets</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">IsThermician</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">{{ activeTicket.project.projectName }}</th>
+                        <td>{{ activeTicket.project.status }}</td>
+                        <th scope="col">
+                            {% if activeTicket.activeThermician %}
+                                Projets pris
+                            {% else %}
+                                Projet dispo
+                            {% endif %}
+                        </th>
+                        <td><a href="{{ path('thermician_show_my_ticket', {'idProject': activeTicket.project.id}) }}" class="btn btn-projet">Voir le projets</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        {% endif %}
+
+        {% if priorityTickets is defined %}
+            <h3 class="mb-3">Ticket prioritaire</h3>
+            <table class="table table-hover table-bordered ">
+                <thead class="table-dark">
+                <tr>
+                    <th scope="col">Nom du Projets</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">IsThermician</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for ticket in priorityTickets %}
+                    <tr>
+                        <th scope="row">{{ ticket.project.projectName }}</th>
+                        <td>{{ ticket.project.status }}</td>
+                        <th scope="col">
+                            {% if ticket.activeThermician %}
+                                Projets pris
+
+                            {% else %}
+                                Projet dispo
+                            {% endif %}
+                        </th>
+                        <td><a href="{{ path('thermician_show_ticket', {'idProject': ticket.project.id}) }}" class="btn btn-info">Voir le projets</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+{% endblock %}

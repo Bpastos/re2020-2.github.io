@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Séléctionner un forfait pour le projet{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<div class="row">
+			{% for forfait in offers %}
+				<div class="card text-white bg-secondary mb-3 m-lg-3" style="max-width: 20rem;">
+					<div class="card-header">{{ forfait.name }}</div>
+					<div class="card-body">
+						<h4 class="card-title">{{ (forfait.price|amount) }}</h4>
+						<p class="card-text">{{ forfait.description }}</p>
+						<a href="{{ path('payment_create', {'idOffer': forfait.id, 'idProject': project.id}) }}" class="btn btn-info">Select offer</a>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

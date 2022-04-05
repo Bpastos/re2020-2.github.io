@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="container-fluid connexionBg">
+    <div class="container">
+        <div class="row justify-content-center occupeHauteur align-items-center">
+            <div class="col-md-5">
+                <div class="bgFormConnexion p-5 text-center">
+                    {{ form_start(form) }}
+                    <img src="{{ asset('images/Logo@2x.png') }}" alt="logo" title="RE2020" class="mb-5">
+                    <h1 class="h3 mb-3 font-weight-normal titleCentredDivid text-center">Inscription</h1>
+                    <div class="mb-2">{{ form_start(form) }}</div>
+                    <div class="mb-2">{{ form_row(form.email) }}</div>
+                    <div class="mb-2">{{ form_row(form.lastName) }}</div>
+                    <div class="mb-2">{{ form_row(form.firstName) }}</div>
+                    <div class="mb-2">{{ form_row(form.password.first) }}</div>
+                    <div class="mb-2">{{ form_row(form.password.second) }}</div>
+                    <div>{{ form_widget(form.submit, {'label': 'Crée sont compte'}) }}</div>
+                    {{ form_end(form) }}
+                    <a href="#" class="formLink">Vous-avez déja un compte ? Connectez-vous</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

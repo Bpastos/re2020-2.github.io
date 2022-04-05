@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Thermcian{% endblock %}</title>
+    {% include 'thermician/layout/_navbar.html.twig' %}
+    <script src="https://kit.fontawesome.com/d684afa6cf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ asset('css/thermician.css') }}">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+<div class="">
+    {% for rubrique, messages in app.flashes %}
+        <div class="alert alert-{{ rubrique }} text-center">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    {% block body %}{% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="h3 mb-3 font-weight-normal mt-5 pt-5">SecondaryHeading</h1>
+        {{ form_start(form) }}
+        <label for="">ECS thermodynamique</label>
+        {{ form_row(form.thermodynamicDHW) }}
+        <label for="">Emplacement : </label>
+        {{ form_row(form.location) }}
+        {{ form_widget(form.submit, {'label': 'Crée le SanitaryHotwater'}) }}
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}
